@@ -1,0 +1,42 @@
+.toggler.selected{
+    border: 1px solid red;
+}
+
+.toggler {
+    border: 1px solid #040404;
+}
+
+td {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+
+.block{
+    cursor: pointer;
+    border: 1px solid #040404;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.myTable {
+    border-collapse: separate;
+    white-space: nowrap;
+}
+
+.undefined{
+    background-color:  gray;
+}
+
+.empty{
+    background-color:  white;
+}
+
+.filled{
+    background-color:  black;
+}
+
+.block.perfected {
+    background-color:  red;
+}

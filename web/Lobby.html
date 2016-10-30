@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Games Lobby</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+    </style>
+    <script src="script/jquery-2.0.3.min.js"></script>
+    <script src="script/lobby.js"></script>
+    <script src="script/createBoard.js"></script>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/lobby.css">
+</head>
+
+<body>
+<div class="container-fluid">
+    <span id="onlinePlayers">
+        <div class="sectionTitle">Online Players</div>
+        <table class="table">
+            <thead>
+            <tr class="tableColTitle">
+                <th>Name</th>
+                <th style="width: 20%">Type</th>
+            </tr>
+            </thead>
+            <tbody id="usersTable">
+
+            </tbody>
+        </table>
+
+        <button type="submit" id="buttonLogOut" class="lobbyBtns">Logout</button>
+    </span>
+
+    <span id="gameList">
+        <div class="sectionTitle">Game List</div>
+        <div id="xmlFileDiv">
+        <input type="file" accept=".xml" id="xmlFile" name="xmlFileName"> </input>
+        </div>
+        <button id="uploadButton" class="lobbyBtns"> Upload New Game </button>
+        <input type="button" id="joinGameButton" value="Join Game" class="lobbyBtns">  </input>
+        <input type="button" id="showBoard" value="Show Board" class="lobbyBtns">  </input>
+
+        <table class="table">
+            <thead>
+            <tr class="tableColTitle">
+                <th>Title</th>
+                <th>Organizer</th>
+                <th>Players Count</th>
+                <th>Total Moves</th>
+                <th>Board Size</th>
+                <th>Game Status</th>
+            </tr>
+            </thead>
+            <tbody id="gameTable">
+
+            </tbody>
+        </table>
+    </span>
+</div>
+
+<div id="popup">
+    <div id="popupBg" onclick="closePopup()"/>
+    <div id="message">Message</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+    background-image: url("../images/gameBG.png");
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.section {
+    background-color: whitesmoke;
+    margin: 4% 0;
+    padding: 0 6% 6% 6%;
+    border: solid 2px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.sectionTitle {
+    font-size: 2em;
+    color: #982929;
+    text-align: center;
+}
+
+.roomBtns {
+    color: #f0f0f1;
+    background-color: #982929;
+    border: solid 1px #555;
+    border-radius: 4px;
+    margin: 5% 0;
+    padding: 2%;
+    cursor: pointer;
+}
+
+#buttonPerformeMove {
+    background-color: #c13434;
+}
+
+#menuSection {
+    position: absolute;
+    left: 0;
+    margin: 0 2%;
+    width: 20%;
+}
+
+#selectOption {
+    text-align: center;
+    margin: 3% 0;
+}
+
+.option {
+    color: #f0f0f1;
+    background-color: rgb(81, 101, 167);
+    border: solid 1px #555;
+    border-radius: 4px;
+    margin: 4%;
+    padding: 2%;
+    display: inline-block;
+}
+
+.optionSelected {
+    background-color: rgb(102, 132, 214);
+}
+
+#move{
+    text-align: center;
+}
+
+.infoSubTitle {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#GameInfo {
+    width: 49%;
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+#bord {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    margin: 0 2%;
+}
+
+#buttonQuit {
+    float: right;
+    margin: 2% 0;
+    width: 100%;
+}
+
+#gameBoard {
+    float: left;
+    margin: 2% 0;
+}
+
+
+
+
+#chatarea{
+    height: 200px;
+    border: darkgray 1px solid;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.HumanIcon{
+    height: 40px;
+    width: 40px;
+    background: url(/images/user.ico) no-repeat top left;
+    background-size: 40px 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.MachineIcon{
+    height: 40px;
+    width: 40px;
+    background: url(/images/robot.png) no-repeat top left;
+    background-size: 40px 40px;
+    display: inline-block;
+    vertical-align: middle;
+}

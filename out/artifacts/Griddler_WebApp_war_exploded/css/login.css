@@ -1,0 +1,60 @@
+
+body {
+    background-image: url("../images/gameBG.png");
+    font-family: 'Shadows Into Light', cursive;}
+
+#loginTitle {
+    font-size: 4em;
+    text-align: center;
+    color: #982929;
+    font-family: 'Shadows Into Light', cursive;
+    margin: 2% 0;
+}
+
+.login {
+    position: relative;
+    display: inline-block;
+    width: 22%;
+    margin: 0 10%;
+}
+
+img.avatar {
+    width: 100%;
+    border-radius: 50%;
+    text-align: left;
+    margin-bottom: 2%;
+    display: inline-block;
+}
+
+#inputFromUser {
+    width: 100%;
+    height: 10%;
+    font-size: 1.5em;
+    border: darkgray 1px solid;
+    border-radius: 4px;
+    margin-bottom: 2%;
+    overflow-y: auto;
+    padding: 0.5%;
+}
+
+#UserType {
+    font-size: 1.5em;
+    margin: 0 0 2% 4%;
+}
+
+#MachineType {
+    margin-left: 4%;
+}
+
+#buttonLogin{
+    font-size: 1.5em;
+    width: 100%;
+    color: #f0f0f1;
+    background-color: #982929;
+    border: solid 1px #555;
+    border-radius: 4px;
+}
+
+.loginImage {
+    display: inline-block;
+}

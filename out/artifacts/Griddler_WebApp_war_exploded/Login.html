@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Griddler Online</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light');
+    </style>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <script src="script/jquery-2.0.3.min.js"></script>
+    <script src="script/login.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div id="loginTitle">Welcome to Griddler Online</div>
+
+    <div class="login">
+        <img src="images/user.png" alt="Avatar" class="avatar">
+        <span id="loginInput">
+            <input type="text" name="username" id="inputFromUser" class="form-control" placeholder="User Name" required
+                   autofocus/>
+            <div id="UserType">
+                <input type="radio" name="UserType" value="Human"> Human
+                <input id="MachineType" type="radio" name="UserType" value="Machine" checked> Machine
+            </div>
+            <input type="button" value="Login" id="buttonLogin"/>
+        </span>
+    </div>
+
+    <div class="login">
+        <img src="images/login.jpg">
+    </div>
+</div>
+
+<div id="popup">
+    <div id="popupBg" onclick="closePopup()"/>
+    <div id="message">Message</div>
+</div>
+
+</body>
+</html>

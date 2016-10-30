@@ -50,7 +50,7 @@ function ajaxBoard()
             "ActionType": actionType
         },
         success: function (boardInfo) {
-           var rows = boardInfo.m_Rows;
+            var rows = boardInfo.m_Rows;
             var cols = boardInfo.m_Cols;
             var board = boardInfo.m_Board;
             var rowBlocks = boardInfo.m_RowBlocks;
@@ -58,8 +58,6 @@ function ajaxBoard()
 
             updatePullingBoard(rows,cols,board);
             updateSpecificBlocks(rowBlocks,colBlocks);
-
-
         }
     });
 }
@@ -138,6 +136,7 @@ function refreshGameDeatils(gameDetails) {
         }
         $('#GameAction').hide();
         $('#GameInfo').hide();
+        $('#buttonQuit').val("Back To Lobby");
         clearInterval(GamesDeatilsAndPlayers);
     }
 }
@@ -181,7 +180,6 @@ function ajaxIsGameStarted() {
     });
 }
 
-
 function actionSelected() {
     $('.option').removeClass('optionSelected');
     $(this).addClass('optionSelected');
@@ -191,7 +189,6 @@ function openPopup(msg) {
     $("#message").html(msg);
     $("#popup").show();
 }
-
 
 function closePopup() {
     $("#popup").hide();

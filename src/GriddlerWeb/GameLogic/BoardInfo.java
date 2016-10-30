@@ -111,7 +111,7 @@ public class BoardInfo
         m_Board = new BoardOptions[m_Rows][m_Cols];
     }
 
-    private void initBoard()
+    public void initBoard()
     {
         for (int currRow = FIRST_INDEX_ARRAY; currRow < m_Rows; currRow++) {
             for (int currCol = FIRST_INDEX_ARRAY; currCol < m_Cols; currCol++) {

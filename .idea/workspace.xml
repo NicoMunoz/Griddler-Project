@@ -6,7 +6,17 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc2c6348-7c87-4724-8c18-121ae375c5a7" name="Default" comment="" />
+    <list default="true" id="dc2c6348-7c87-4724-8c18-121ae375c5a7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GriddlerWeb/Servlets/UploadServlet.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BoardInfo.java" afterPath="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BoardInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameLogic.java" afterPath="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameLogic.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IComputerMoves.java" afterPath="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IComputerMoves.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/GameRoom.html" afterPath="$PROJECT_DIR$/web/GameRoom.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/script/gameRoom.js" afterPath="$PROJECT_DIR$/web/script/gameRoom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/script/lobby.js" afterPath="$PROJECT_DIR$/web/script/lobby.js" />
+    </list>
     <ignored path="ChatOnline.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,100 +36,7 @@
     <favorites_list name="ChatOnline" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="gameRoom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/script/gameRoom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PerfectBlock.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/PerfectBlock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2625">
-              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LobbyServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Servlets/LobbyServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3175">
-              <caret line="127" column="44" selection-start-line="127" selection-start-column="44" selection-end-line="127" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GamesManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/GamesManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lobby.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/lobby.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="popup.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/popup.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="board.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/css/board.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/script/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lobby.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/script/lobby.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="229" column="25" selection-start-line="229" selection-start-column="25" selection-end-line="229" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -131,6 +48,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -139,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/PLayerDataBinding.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/Servlets/uploadServlet.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/Logic/UserManager.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/Logic/GamesManager.java" />
@@ -173,23 +92,24 @@
         <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IPerfectBlock.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/ComputerPlayer.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/UILogic/SimpleBoard.java" />
-        <option value="$PROJECT_DIR$/web/GameRoom.html" />
         <option value="$PROJECT_DIR$/web/Lobby.html" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/Servlets/LobbyServlet.java" />
         <option value="$PROJECT_DIR$/web/script/createBoard.js" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/Utils/Constants.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/UILogic/GameDetails.java" />
-        <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BoardInfo.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/Servlets/GameRoomServlet.java" />
-        <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameLogic.java" />
         <option value="$PROJECT_DIR$/web/script/board.js" />
-        <option value="$PROJECT_DIR$/web/script/gameRoom.js" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/PerfectBlock.java" />
         <option value="$PROJECT_DIR$/src/GriddlerWeb/UILogic/GamesManager.java" />
         <option value="$PROJECT_DIR$/web/css/lobby.css" />
         <option value="$PROJECT_DIR$/web/css/popup.css" />
-        <option value="$PROJECT_DIR$/web/script/lobby.js" />
         <option value="$PROJECT_DIR$/web/css/board.css" />
+        <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BoardInfo.java" />
+        <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameLogic.java" />
+        <option value="$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IComputerMoves.java" />
+        <option value="$PROJECT_DIR$/web/GameRoom.html" />
+        <option value="$PROJECT_DIR$/web/script/lobby.js" />
+        <option value="$PROJECT_DIR$/web/script/gameRoom.js" />
       </list>
     </option>
   </component>
@@ -219,7 +139,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -237,32 +157,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -272,11 +191,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -290,24 +209,113 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="last one" />
+              <option name="myItemId" value="Griddler-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="GriddlerWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GriddlerWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UILogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GriddlerWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Servlets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GriddlerWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Griddler-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GriddlerWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GameLogic" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -318,7 +326,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14921875" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../finished tasks/Griddler - FX/Griddler - FX" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../last one" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="preferences.applicationServers" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -829,30 +837,30 @@
       <workItem from="1477308724282" duration="9599000" />
       <workItem from="1477413892991" duration="63947000" />
       <workItem from="1477848133567" duration="2297000" />
+      <workItem from="1477851356947" duration="1980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285829000" />
+    <option name="totallyTimeSpent" value="287809000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291592" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37485844" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3626883" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36194897" sideWeight="0.49785408" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20837809" sideWeight="0.47818792" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20461869" sideWeight="0.47818792" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -865,6 +873,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291592" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -920,9 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2750">
           <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding>
-            <element signature="e#4787#4788#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -938,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
           <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,30 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/CellUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IComputerMoves.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Servlets/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-516">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="e#3057#3176#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_102/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -991,15 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Utils/ServletUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1011,62 +983,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/GameRoom.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/Lobby.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-317">
-          <caret line="36" column="22" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/UserManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-217">
-          <caret line="6" column="45" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/SimpleBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.291/GameRoomServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="164" column="32" selection-start-line="164" selection-start-column="12" selection-end-line="164" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Utils/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="47" column="63" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.291/GameRoomServlet.java" />
     <entry file="file://$USER_HOME$/Downloads/Telegram Desktop/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="91" column="9" selection-start-line="0" selection-start-column="0" selection-end-line="371" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/GameDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1084,105 +1005,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BoardInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="169" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BlockValues.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/ComputerPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IPerfectBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/XMLReaderErrors.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/XmlManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="241" column="53" selection-start-line="241" selection-start-column="53" selection-end-line="241" selection-end-column="53" />
-          <folding>
-            <element signature="method#idCorrectFromXML#0;class#XmlManager#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameMove.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/google-gson-2.1/gson-2.1-sources.jar!/com/google/gson/Gson.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Utils/SessionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding>
-            <element signature="e#2868#2869#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8025">
-          <caret line="370" column="0" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
-          <folding>
-            <element signature="e#11959#11960#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1198,7 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="45" column="23" selection-start-line="45" selection-start-column="23" selection-end-line="45" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1214,61 +1039,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Servlets/GameRoomServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8600">
-          <caret line="363" column="0" selection-start-line="363" selection-start-column="0" selection-end-line="363" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/script/board.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="47" column="36" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
-          <folding>
-            <element signature="n#!!block;n#removeSelectedSquares#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/script/gameRoom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="45" selection-start-line="37" selection-start-column="45" selection-end-line="37" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/PerfectBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2625">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Servlets/LobbyServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3175">
-          <caret line="127" column="44" selection-start-line="127" selection-start-column="44" selection-end-line="127" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/GamesManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/lobby.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
+        <state relative-caret-position="1725">
           <caret line="69" column="1" selection-start-line="69" selection-start-column="1" selection-end-line="69" selection-end-column="1" />
           <folding />
         </state>
@@ -1276,34 +1049,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/script/login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
+        <state relative-caret-position="1375">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/script/createBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="44" column="9" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc;n#getShowBoard#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/css/popup.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
+        <state relative-caret-position="975">
           <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/script/lobby.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="229" column="25" selection-start-line="229" selection-start-column="25" selection-end-line="229" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -1312,6 +1067,264 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BlockValues.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/BoardInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="113" column="10" selection-start-line="113" selection-start-column="10" selection-end-line="113" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/Cell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="191" column="0" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+          <folding>
+            <element signature="method#removePlayer#0;class#GameLogic#0" expanded="false" />
+            <element signature="method#initGame#0;class#GameLogic#0" expanded="false" />
+            <element signature="method#checkTechnicalVictory#0;class#GameLogic#0" expanded="false" />
+            <element signature="method#notInGame#0;class#GameLogic#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/GameMove.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/ComputerPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IComputerMoves.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/IPerfectBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/PerfectBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="90" column="7" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+          <folding>
+            <element signature="e#2839#2840#0" expanded="true" />
+            <element signature="e#2868#2869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/XmlManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="234" column="7" selection-start-line="234" selection-start-column="7" selection-end-line="234" selection-end-column="7" />
+          <folding>
+            <element signature="method#idCorrectFromXML#0;class#XmlManager#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/GameLogic/XMLReaderErrors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Servlets/GameRoomServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="347" column="9" selection-start-line="347" selection-start-column="9" selection-end-line="347" selection-end-column="9" />
+          <folding>
+            <element signature="e#14131#14250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Servlets/LobbyServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Servlets/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/CellUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/GameDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/GamesManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/SimpleBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/UILogic/UserManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="47" column="63" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Utils/ServletUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GriddlerWeb/Utils/SessionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/GameRoom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Lobby.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/script/lobby.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/script/createBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#getShowBoard#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/script/board.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!block;n#removeSelectedSquares#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/script/gameRoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
           <folding />
         </state>
       </provider>

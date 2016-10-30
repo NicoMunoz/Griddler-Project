@@ -93,9 +93,6 @@ public class GameLogic
             AddNewMoveToPlayer(i_MovesToEnter,m_CurrPlayer);
             m_currMoveOfSamePlayer++;
         }
-//        if(m_currMoveOfSamePlayer == MOVES_TURN_MULTI && m_TotalRounds != MAX_ROUND_SINGLE_PLAYER){
-//            PassTurn();
-//        }
         if(m_Players.get(m_CurrPlayer).IsPlayerWon()){
             m_WinnerName = m_Players.get(m_CurrPlayer).getName();
         }
@@ -115,36 +112,6 @@ public class GameLogic
         return returnValues;
 
     }
-    //        Integer currPlayer = null, amountOfMoves = 0;
-    //        int demoround = m_CurrRound, demoCurrPly = m_CurrPlayer;
-
-//        while(!m_Players.get(demoCurrPly).isHuman() && demoround <= m_TotalRounds)
-//        {
-//            if(currPlayer == null)
-//            {
-//                currPlayer = m_CurrPlayer;
-//            }
-//            for(int currMoveInSameTurn =0 ; currMoveInSameTurn< m_MaxMovesPerTurn ; currMoveInSameTurn++) {
-//                ComputerPlayer compMove = new ComputerPlayer();
-//                Pair<GameMove, Integer> currMove = compMove.calculateComputerMove(m_Players.get(demoCurrPly).getBoard().getBoardHeight(), m_Players.get(demoCurrPly).getBoard().getBoardWidth());
-//                if (currMove.getKey() != null) {
-//                    for (int undoNum = 0; undoNum < currMove.getValue(); undoNum++) {
-//                            UndoLastMoveFromPlayer();
-//                    }
-//                    AddNewMoveToPlayer(currMove.getKey(),demoCurrPly);
-//                    m_Players.get(demoCurrPly).setScore(CalcCurrPlayerScore(demoCurrPly));
-//                }
-//            }
-//            amountOfMoves++;
-//
-//            if(demoCurrPly == m_Players.size() -DIFFERNCE_BETWEEN_SIZE_TO_INDEX )
-//            {
-//                demoround ++;
-//            }
-//            demoCurrPly = (demoCurrPly + 1)% m_Players.size();
-//        }
-//        m_computerPlayed=new Pair<>(currPlayer,amountOfMoves);
-
 
     private void AddNewMoveToPlayer(GameMove i_MovesToEnter ,int i_CurrPly)
     {
@@ -209,19 +176,7 @@ public class GameLogic
 
     public Player getCurrentPlayer() { return m_Players.get(m_CurrPlayer); }
 
-    public int getCurrPlayerIndex() {return m_CurrPlayer;}
-
     public ArrayList<Player> getPlayers(){ return m_Players;}
-
-    public float getScore()
-    {
-        return m_Players.get(m_CurrPlayer).getScore();
-    }
-
-    public BoardInfo.BoardOptions getCellValue(int i_Row, int i_Col)
-    {
-        return m_Players.get(m_CurrPlayer).getBoard().getCellValue(i_Row, i_Col);
-    }
 
     public ArrayList<BlockValues>[] getColumnList()
     {
@@ -233,63 +188,16 @@ public class GameLogic
         return m_Players.get(m_CurrPlayer).getBoard().getRowBlocks();
     }
 
-    public int getGameBoardColumn()
-    {
-        return m_Players.get(m_CurrPlayer).getBoard().getBoardWidth();
-    }
-
-    public int getGameBoardRow()
-    {
-        return m_Players.get(m_CurrPlayer).getBoard().getBoardHeight();
-    }
-
-    public int getMaxBlockNumberInRow()
-    {
-        return m_Players.get(m_CurrPlayer).getBoard().getMaxBlockNumberInRow();
-    }
-
-    public int getMaxBlockNumberInCol()
-    {
-        return m_Players.get(m_CurrPlayer).getBoard().getMaxBlockNumberInCol();
-    }
-
-    public boolean IsPlayerWon() { return m_Players.get(m_CurrPlayer).IsPlayerWon(); }
-
     public boolean getFinishAllRound() { return m_finishAllRound; }
-
-    public String getID() { return m_Players.get(m_CurrPlayer).getIDasString(); }
 
     public int getCurrGameRound()
     {
         return  m_CurrRound;
     }
 
-    public String getGameMoves(int i_IndexPlayer)
-    {
-        StringBuilder AllMovesUntilNow = new  StringBuilder();
-        LinkedList<GameMove> allMovesFromPlayer = m_Players.get(i_IndexPlayer).getAllMoves();
-        if(allMovesFromPlayer.size() > 0){
-            for (GameMove gameMove : allMovesFromPlayer) {
-                AllMovesUntilNow.append(gameMove.toString() + System.lineSeparator());
-            }
-        }
-        else{
-            AllMovesUntilNow.append("Not have Game Moves.");
-        }
 
-        return AllMovesUntilNow.toString();
-    }
 
-    public boolean IsEndOfRound() {
-        return  m_CurrRound == m_TotalRounds && m_CurrPlayer == m_Players.size() - 1;
-    }
     public boolean canMakeAnotherMove() {return (m_currMoveOfSamePlayer < m_MaxMovesPerTurn);}
-    public boolean hadComputerPlayed(){return m_computerPlayed.getValue() >0;}
-
-    public Pair<Integer,Integer> getComputerPlayersAndSetCurrPlyToCompFirst(){
-        m_CurrPlayer=m_computerPlayed.getKey();
-        return m_computerPlayed;
-    }
 
     public boolean isFullPlayers()
     {
@@ -319,7 +227,6 @@ public class GameLogic
         return m_WinnerName;
     }
 
-
     public void setActiveGame(boolean gamestatus) {
         m_ActiveGame = gamestatus;
     }
@@ -338,13 +245,30 @@ public class GameLogic
         int plyIndex = 0;
         for (Player ply: m_Players)
         {
-            if(ply.getName().equals(playerNameToRemove)) {
+            if(ply.getName().equals(playerNameToRemove))
+            {
                 m_Players.remove(plyIndex);
                 checkTechnicalVictory();
+
+                if(m_Players.size() == 0){
+                    initGame();
+                }
                 break;
             }
             plyIndex++;
         }
+    }
+
+    private void initGame() {
+        m_CurrPlayer = FIRST_PLAYER;
+        m_currMoveOfSamePlayer = TURN_START_VALUE;
+        m_CurrRound = ROUND_START_VALUE;
+        m_ActiveGame = true;
+        m_WinnerName = null;
+        m_TechnicalVictory = false;
+        m_finishAllRound = false;
+        m_computerPlayed = new Pair<>(0,0);
+        m_OrginalBoard.initBoard();
     }
 
     private void checkTechnicalVictory()

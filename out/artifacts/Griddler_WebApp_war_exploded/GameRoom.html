@@ -36,7 +36,16 @@
             <div id="move">
                 <div id="buttonPerformeMove" class="roomBtns">Performe Move</div>
                 <div id="buttonPassTurn" class="roomBtns">Pass Turn</div>
+                <div id="ButtonReplayFromStart" class="roomBtns" onclick="replayFromStart()">Reply From Start</div>
+                <div id="ButtonReplayFromEnd" class="roomBtns" onclick="replyFromEnd()">Reply From End</div>
+
             </div>
+        </div>
+        <div id="Replay" class="section">
+            <div class="sectionTitle">Replay</div>
+            <div id="ButtonNextMove" class="roomBtns" onclick="nextMove()">Next</div>
+            <div id="ButtonPrevMove" class="roomBtns" onclick="prevMove()">Prev</div>
+            <div id="ButtonExitReplay" class="roomBtns" onclick="replayExit()">Back To Game</div>
         </div>
 
         <div id="info" class="section">
@@ -54,6 +63,8 @@
             <span class="infoSubTitle">Move:</span>
             <span id="lableCurrentMove"></span>
         </div>
+
+        <input type="button" value="Quit" id="buttonQuit" class="btn btn-danger"/>
 
         <div id="playersTable" class="section">
             <div class="sectionTitle"> Online Players</div>
@@ -73,7 +84,6 @@
     </div>
 
     <div id="bord">
-        <input type="button" value="Quit" id="buttonQuit" class="btn btn-danger"/>
         <div id="gameBoard">
             <table id="board"></table>
         </div>

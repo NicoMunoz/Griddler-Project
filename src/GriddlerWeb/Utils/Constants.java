@@ -46,6 +46,8 @@ public class Constants
     public static final String GET_SHOW_BOARD="getShowBoard";
     public static final String PULL_BOARD = "pullBoard";
     public static final String FIRST_PLY_COMP="firstPlyComputer";
+    public static final String REPLAY="replay";
+    public static final String PREV_OR_NEXT="prevOrNext";
 
 
 

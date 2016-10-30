@@ -26,7 +26,6 @@ function getShowBoard(table)
 }
 function getBoard(table) {
     var actionType = "getBoard";
-    var nicolasdasdasdasdasd = 111;
 
     $.ajax({
         url: "gamingRoom",

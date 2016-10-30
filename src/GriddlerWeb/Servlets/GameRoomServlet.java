@@ -67,8 +67,80 @@ public class GameRoomServlet extends HttpServlet
             case Constants.FIRST_PLY_COMP:
                 checkAndManageFirstPlayer(request,response);
                 break;
+            case Constants.REPLAY:
+                startReplay(request,response);
+                break;
+            case Constants.PREV_OR_NEXT:
+                prevOrNextOption(request,response);
+                break;
 
         }
+    }
+
+    private Player getSpecificPlayerByName(HttpServletRequest request)
+    {
+        String nameJson = new Gson().toJson(((User)request.getSession(false).getAttribute(Constants.LOGIN_USER)).GetName());
+        GameLogic currGame = getGameLogic(request);
+        Player currPly = searchAndGetPly(currGame.getPlayers(),nameJson);
+        return currPly;
+    }
+
+    private void prevOrNextOption(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException {
+        response.setContentType("application/json");
+
+        Player currPly =getSpecificPlayerByName(request);
+
+        boolean next=stringToBooleanRequest(request);
+
+        BoardInfo retBoard = currPly.getNextOrPrevReplay(next);
+        String retJson = resiveNullBoardToJason(retBoard,"Had come to last move to show");
+
+        response.getWriter().write(retJson);
+        response.getWriter().flush();
+    }
+
+    private void startReplay(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+        response.setContentType("application/json");
+
+        GameLogic currGame = getGameLogic(request);
+        Player currPly =getSpecificPlayerByName(request);
+
+        boolean fromStart=stringToBooleanRequest(request);
+        BoardInfo original = currGame.getOriginalBoard();
+
+        BoardInfo retBoard = currPly.startReplayMove(fromStart,original);
+
+        String retJson = resiveNullBoardToJason(retBoard,"Has no Moves Done");
+
+        response.getWriter().write(retJson);
+        response.getWriter().flush();
+    }
+
+    private boolean stringToBooleanRequest(HttpServletRequest request){
+        String mssg = request.getParameter(Constants.REQUEST_TYPE);
+        boolean isTrue=false;
+        if(mssg.equals("true")){
+            isTrue= true;
+        }
+        return isTrue;
+    }
+
+    private String resiveNullBoardToJason(BoardInfo board ,String mssgToSend)
+    {
+        String retJson;
+        if(board != null)
+        {
+            String existBoard = new Gson().toJson(true);
+            String Board = new Gson().toJson(board);
+            retJson = "["+existBoard+","+Board+"]";
+        }
+        else
+        {
+            String existBoard = new Gson().toJson(false);
+            String message = new Gson().toJson(mssgToSend);
+            retJson = "["+existBoard+","+message+"]";
+        }
+        return retJson;
     }
 
     private void checkAndManageFirstPlayer(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
@@ -77,7 +149,7 @@ public class GameRoomServlet extends HttpServlet
         ArrayList<Player> players = currGame.getPlayers();
         String nameJson = new Gson().toJson(((User)request.getSession(false).getAttribute(Constants.LOGIN_USER)).GetName());
 
-       Player thisPly = getSpeceifPlyByName(players,nameJson);
+       Player thisPly = searchAndGetPly(players,nameJson);
 
         if(!thisPly.isHuman()){
             isComputer="true";
@@ -95,10 +167,7 @@ public class GameRoomServlet extends HttpServlet
     private void pullBoard(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
         response.setContentType("application/json");
-        String nameJson = new Gson().toJson(((User)request.getSession(false).getAttribute(Constants.LOGIN_USER)).GetName());
-        GameLogic currGame = getGameLogic(request);
-
-        Player boardFromPly = getSpeceifPlyByName(currGame.getPlayers(),nameJson);
+        Player boardFromPly = getSpecificPlayerByName(request);
         BoardInfo currBoard = boardFromPly.getBoard();
 
         String board = new Gson().toJson(currBoard);
@@ -106,7 +175,7 @@ public class GameRoomServlet extends HttpServlet
         response.getWriter().flush();
     }
 
-    private Player getSpeceifPlyByName(ArrayList<Player>i_AllPlayes , String nameJson) {
+    private Player searchAndGetPly(ArrayList<Player>i_AllPlayes , String nameJson) {
         Player retPly = null;
         for(Player currPly : i_AllPlayes)
         {
@@ -309,7 +378,7 @@ public class GameRoomServlet extends HttpServlet
         usersJson = getPlayesToJson(gamePlayers);
         gameDetalisJson = getGameDetalisJson(currGame);
 
-        String bothJson = "["+usersJson+","+gameDetalisJson+","+nameJson+"]"; //Put both objects in an array of 2 elements
+        String bothJson = "["+usersJson+","+gameDetalisJson+","+nameJson+"]"; //Put both objects in an array of 3 elements
         response.getWriter().write(bothJson);
         response.getWriter().flush();
     }

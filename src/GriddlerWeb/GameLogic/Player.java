@@ -3,6 +3,7 @@ package GriddlerWeb.GameLogic;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
+import java.util.Collections;
 
 public class Player
 {
@@ -17,6 +18,7 @@ public class Player
     private GameMove m_RedoMove;
     private GameMove m_CurrentMove;
     private float m_Score;
+    private ReplayMove replayMove;
 
     // cstor
     public Player(String i_Name, BoardInfo i_Board, boolean i_isHuman)
@@ -87,6 +89,50 @@ public class Player
         return returnGameMove;
     }
 
+    //bonus replay game;
+    public BoardInfo startReplayMove(boolean fromStart,BoardInfo originalBoard)
+    {
+        BoardInfo retBoard = null;
+        if(m_AllMoves.size() > 0) {
+            BoardInfo sendBoard = new BoardInfo(originalBoard);
+            LinkedList<GameMove> replay = m_AllMoves;
+            int currInex = 0;
+            if(!fromStart) {
+                replay = reverseGameMove(m_AllMoves);
+            }
+            replayMove = new ReplayMove(replay, currInex, sendBoard);
+            sendBoard.EnterNewMoveToBoard(replay.get(currInex).getCells());
+            retBoard = replayMove.getBoard();
+        }
+        return retBoard;
+    }
+    private LinkedList<GameMove> reverseGameMove(LinkedList<GameMove> listToReverse)
+    {
+        LinkedList<GameMove> retList =new LinkedList<>();
+        for(int i=0; i< listToReverse.size(); i++)
+        {
+            retList.addFirst( listToReverse.get(i));
+        }
+        return retList;
+    }
+
+    public BoardInfo getNextOrPrevReplay(boolean next )
+    {
+        BoardInfo retBoard = null;
+        boolean couldMake;
+        if(next){
+           couldMake = replayMove.moveNext();
+        }
+        else
+        {
+           couldMake = replayMove.movePrev();
+        }
+        if (couldMake) {
+            retBoard = replayMove.getBoard();
+        }
+        return retBoard;
+    }
+
     // GET / SET
     public BoardInfo getBoard() {
         return m_Board;
@@ -108,4 +154,5 @@ public class Player
     }
     public void setScore(float i_Score){m_Score = i_Score;}
     public boolean isHuman(){return m_isHuman;}
+    public ReplayMove getReplayMove(){return replayMove;}
 }

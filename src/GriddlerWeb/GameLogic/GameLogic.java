@@ -57,7 +57,6 @@ public class GameLogic
         m_Players.add(new Player(i_PlyName, m_OrginalBoard, i_isHuman));
     }
 
-
     //region Private Functions
 
     private float CalcCurrPlayerScore(int i_currPly)
@@ -166,6 +165,15 @@ public class GameLogic
             }
             PassTurn();
         }
+    }
+
+    public BoardInfo replayChoosed(boolean start){
+        return m_Players.get(m_CurrPlayer).startReplayMove(start,m_OrginalBoard);
+    }
+
+    public BoardInfo nextOrPrevChoosed(boolean next)
+    {
+        return  m_Players.get(m_CurrPlayer).getNextOrPrevReplay(next);
     }
 
     //region Get,Set

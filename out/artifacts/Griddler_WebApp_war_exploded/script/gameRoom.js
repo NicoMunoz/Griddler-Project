@@ -14,6 +14,7 @@ $(document).ready(function () {
     getBoard($('#board'));
 
     $('#GameAction').hide();
+    $('#Replay').hide();
     $('#GameInfo').hide();
 
     $('.option').on("click", actionSelected);
@@ -50,18 +51,20 @@ function ajaxBoard()
             "ActionType": actionType
         },
         success: function (boardInfo) {
-           var rows = boardInfo.m_Rows;
-            var cols = boardInfo.m_Cols;
-            var board = boardInfo.m_Board;
-            var rowBlocks = boardInfo.m_RowBlocks;
-            var colBlocks = boardInfo.m_ColBlocks;
-
-            updatePullingBoard(rows,cols,board);
-            updateSpecificBlocks(rowBlocks,colBlocks);
-
-
+            updateAllBoard(boardInfo);
         }
     });
+}
+function updateAllBoard(boardInfo)
+{
+    var rows = boardInfo.m_Rows;
+    var cols = boardInfo.m_Cols;
+    var board = boardInfo.m_Board;
+    var rowBlocks = boardInfo.m_RowBlocks;
+    var colBlocks = boardInfo.m_ColBlocks;
+
+    updatePullingBoard(rows,cols,board);
+    updateSpecificBlocks(rowBlocks,colBlocks);
 }
 function updatePullingBoard(rows,cols,board){
     for(var currR = 0 ; currR < rows ; currR++) {
@@ -134,10 +137,16 @@ function refreshGameDeatils(gameDetails) {
         if (gameDetails.technicalVictory === true) {
             openPopup("Technical Victory To " + gameDetails.winnerName + "!!!");
         } else {
+            if(gameDetails.winnerName === undefined)
+            {
+                openPopup("We Have No Winner")
+            }
+            else
             openPopup(gameDetails.winnerName + " is Win!!!");
         }
         $('#GameAction').hide();
         $('#GameInfo').hide();
+        $('#buttonQuit').val("Back To Lobby");
         clearInterval(GamesDeatilsAndPlayers);
     }
 }
@@ -174,13 +183,75 @@ function ajaxIsGameStarted() {
                 clearInterval(startGame);
                 $('#GameInfo').fadeIn(200);
                 startIfFirstPlayerComputer();
-
-
             }
         },
     });
 }
 
+ function replayExit() {
+
+     ajaxBoard();
+     $('#Replay').hide();
+     $('#GameAction').fadeIn(200);
+ }
+function nextMove() {
+    ajaxNextOrPrev("true");
+}
+function prevMove(){
+    ajaxNextOrPrev("false");
+}
+
+function ajaxNextOrPrev(next){
+    var actionType = "prevOrNext";
+
+    $.ajax({
+        url: "gamingRoom",
+        data: {
+            "ActionType": actionType,
+            "requestType": next
+        },
+        success: function (result) {
+            if (result[0]) {    // existBoard
+                updateAllBoard(result[1]);
+            } else {
+                openPopup(result[1]);
+            }
+            removeSelectedSquares();
+        }
+    });
+}
+function replyFromEnd(){
+ajaxStartReplay("false");
+}
+function replayFromStart() {
+    ajaxStartReplay("true");
+}
+
+function ajaxStartReplay(start){
+    var actionType = "replay";
+    $.ajax({
+        url: "gamingRoom",
+        data: {
+            "ActionType": actionType,
+            "requestType": start
+        },
+        success: function (result) {
+            if (result[0]) {    // existBoard
+                $('#GameAction').hide();
+                $('#Replay').fadeIn(200);
+                updateAllBoard(result[1]);
+            } else {
+                openPopup(result[1]);
+            }
+            removeSelectedSquares();
+        },
+        error:function (e) {
+            console.log(e);
+        }
+    });
+
+
+}
 
 function actionSelected() {
     $('.option').removeClass('optionSelected');
@@ -191,7 +262,6 @@ function openPopup(msg) {
     $("#message").html(msg);
     $("#popup").show();
 }
-
 
 function closePopup() {
     $("#popup").hide();

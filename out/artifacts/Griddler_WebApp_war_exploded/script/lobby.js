@@ -226,11 +226,9 @@ function closePopup() {
 function openPopupWithBoard(){
     $("#message").addClass('boardMessage');
     $("#message").empty();
-
     var table = $("<table></table>");
     $("#message").append(table);
     getShowBoard(table);
-
     $("#popup").show();
 }
 

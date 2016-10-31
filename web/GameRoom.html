@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/gameRoom.css">
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/icons.css">
 
 </head>
 
@@ -36,15 +37,15 @@
             <div id="move">
                 <div id="buttonPerformeMove" class="roomBtns">Performe Move</div>
                 <div id="buttonPassTurn" class="roomBtns">Pass Turn</div>
-                <div id="ButtonReplayFromStart" class="roomBtns" onclick="replayFromStart()">Reply From Start</div>
-                <div id="ButtonReplayFromEnd" class="roomBtns" onclick="replyFromEnd()">Reply From End</div>
+                <div id="ButtonReplayFromStart" class="roomBtns inLineButton" onclick="replayFromStart()">Reply From Start</div>
+                <div id="ButtonReplayFromEnd" class="roomBtns inLineButton" onclick="replyFromEnd()">Reply From End</div>
 
             </div>
         </div>
         <div id="Replay" class="section">
             <div class="sectionTitle">Replay</div>
-            <div id="ButtonNextMove" class="roomBtns" onclick="nextMove()">Next</div>
-            <div id="ButtonPrevMove" class="roomBtns" onclick="prevMove()">Prev</div>
+            <div id="ButtonNextMove" class="roomBtns inLineButton" onclick="nextMove()">Next</div>
+            <div id="ButtonPrevMove" class="roomBtns inLineButton" onclick="prevMove()">Prev</div>
             <div id="ButtonExitReplay" class="roomBtns" onclick="replayExit()">Back To Game</div>
         </div>
 
@@ -68,7 +69,7 @@
 
         <div id="playersTable" class="section">
             <div class="sectionTitle"> Online Players</div>
-            <table class="table">
+            <table class="table" >
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -77,6 +78,21 @@
                 </tr>
                 </thead>
                 <tbody id="playingUsersTable">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div id="visitorsTable" class="section">
+            <div class="sectionTitle">Visitors</div>
+            <table class ="table">
+                <thead>
+                <tr>
+                    <th>   </th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody id="allVisitors">
 
                 </tbody>
             </table>

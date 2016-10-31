@@ -67,7 +67,7 @@ public class LobbyServlet extends HttpServlet
         if(gameToJoin != null)
         {
             String playerName = userFromSession.GetName();
-            if(gameToJoin.isActiveGame() && gameToJoin.notInGame(playerName) && gameToJoin.hasRoom())
+            if(gameToJoin.isUnActiveGame() && gameToJoin.notInGame(playerName) && gameToJoin.hasRoom())
             {
                 gameToJoin.insertPlayer(playerName, userFromSession.GetType().equals(Constants.HUMAN));
                 request.getSession(true).setAttribute(Constants.GAME_TITLE, gameTitle);
@@ -106,6 +106,9 @@ public class LobbyServlet extends HttpServlet
             case Constants.JOIN_GAME:
                 joinGame(request, response);
                 break;
+            case Constants.JOIN_AS_VISITOR:
+                joinGameVisitor(request,response);
+                break;
             case Constants.LOGOUT:
                 logOut(request, response);
                 break;
@@ -113,6 +116,35 @@ public class LobbyServlet extends HttpServlet
                 checkUserPlaying(request, response);
                 break;
         }
+    }
+
+    private void joinGameVisitor(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+        response.setContentType("application/json");
+        boolean canJoin;
+        String message ="";
+        User userFromSession = SessionUtils.getLoginUser(request);
+        GamesManager gamesManager = ServletUtils.getGamesManager(getServletContext());
+        String name = userFromSession.GetName();
+
+        String gameTitle = request.getParameter(Constants.GAME_TITLE);
+        GameLogic gameToJoin = gamesManager.getSpecificGame(gameTitle);
+
+        if(!gameToJoin.isUnActiveGame()) {
+            canJoin = gameToJoin.checkAndEnterVisitor(name);
+            request.getSession(true).setAttribute(Constants.GAME_TITLE, gameTitle);
+            if(!canJoin)
+                message = "There are no Human Players";
+        }
+        else
+        {
+            canJoin =false;
+            message = "The game didnt started yet";
+        }
+        String firstEle = new Gson().toJson(canJoin);
+        String secEle = new Gson().toJson(message);
+        String retJson = "["+firstEle+","+secEle+"]";
+        response.getWriter().write(retJson);
+        response.getWriter().flush();
     }
 
     @Override

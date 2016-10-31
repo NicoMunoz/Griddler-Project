@@ -6,6 +6,7 @@ $(document).ready(function ()
 
     $.ajaxSetup({cache: false});
     $('#joinGameButton').hide();
+    $('#joinGameVisitor').hide();
     $('#showBoard').hide();
     
 
@@ -15,6 +16,7 @@ $(document).ready(function ()
     $('#joinGameButton').on("click", joinGame);
     $('#showBoard').on("click",openPopupWithBoard);
     $('#buttonLogOut').on("click", logOut);
+    $('#joinGameVisitor').on("click",joinGameAsVisitor);
 
     $('#uploadButton').on("click", function (event) {
         event.preventDefault();
@@ -33,6 +35,7 @@ $(document).ready(function ()
 $(document).on("click", "#gameTable tr", function(e){
     $(this).addClass('success').siblings().removeClass('success');
     $('#joinGameButton').fadeIn(200);
+    $('#joinGameVisitor').fadeIn(200);
     $('#showBoard').fadeIn(200);
 });
 
@@ -51,6 +54,27 @@ function valideFileExtension(file)
     return true;
 }
 
+function joinGameAsVisitor(){
+
+    var gamettl = $("#gameTable").find("tr.success").attr('value');
+    var actionType = "joinGameVisitor";
+
+    $.ajax({
+        url: "lobby",
+        type: 'GET',
+        data: {
+            "gameTitle": gamettl,
+            "ActionType": actionType
+        },
+        success: function(result) {
+            if (result[0]){
+                window.location.replace("GameRoom.html");
+            } else {
+                openPopup(result[1]);
+            }
+        }
+    });
+}
 function joinGame()
 {
     $('#joinGameButton').hide();
@@ -133,9 +157,9 @@ function refreshGameList(games)
         var gameList = $('<tr value="'+gameKey+'"> </tr>');
         var bordSize = gameValue.m_OrginalBoard.m_Rows + " * " + gameValue.m_OrginalBoard.m_Cols;
         var players = gameValue.m_Players.length + " / " + gameValue.m_TotalPlayers;
-
+        var visitors = gameValue.m_VisitorPlayers.length;
         var gameStatus;
-        if(gameValue.m_ActiveGame && gameValue.m_Players.length < gameValue.m_TotalPlayers){
+        if(gameValue.m_UnActiveGame && gameValue.m_Players.length < gameValue.m_TotalPlayers){
             gameStatus = "Available"
         }else {
             gameStatus = "Not Available"
@@ -146,6 +170,7 @@ function refreshGameList(games)
         $('<th>' + players + '</th>').appendTo(gameList);
         $('<th>' + gameValue.m_TotalRounds + '</th>').appendTo(gameList);
         $('<th>' + bordSize + '</th>').appendTo(gameList);
+        $('<th>' + visitors + '</th>').appendTo(gameList);
         $('<th>' + gameStatus + '</th>').appendTo(gameList);
         gameList.appendTo($("#gameTable"));
 

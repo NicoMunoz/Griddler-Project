@@ -13,6 +13,7 @@ public class GameLogic
             DIFFERNCE_BETWEEN_SIZE_TO_INDEX =1, MAX_ROUND_SINGLE_PLAYER = -1,
             FIRST_PLAYER = 0;
     private ArrayList<Player> m_Players;
+    private ArrayList<String> m_VisitorPlayers;
     private int m_CurrPlayer;
     private BoardInfo  m_WinBoard;
     private BoardInfo  m_OrginalBoard;
@@ -24,7 +25,7 @@ public class GameLogic
     private String m_Organizer;
     private int m_TotalPlayers;
     private int m_TotalRounds;    // "MaxMoves"
-    private boolean m_ActiveGame = true;
+    private boolean m_UnActiveGame = true;
     private String m_WinnerName = null;
     private boolean m_TechnicalVictory = false;
     private boolean m_finishAllRound = false;
@@ -33,6 +34,7 @@ public class GameLogic
     public GameLogic(String i_Organizer, String i_GameTitle, int i_TotalPlayers, int i_TotalRounds,
                      int i_Rows, int i_Cols, ArrayList<BlockValues>[] i_RowBlocks, ArrayList<BlockValues>[] i_ColBlocks, ArrayList<Cell> i_WinnerCells)
     {
+        m_VisitorPlayers = new ArrayList<>();
         m_CurrPlayer = FIRST_PLAYER;
         m_currMoveOfSamePlayer = TURN_START_VALUE;
         m_CurrRound = ROUND_START_VALUE;
@@ -166,6 +168,37 @@ public class GameLogic
             PassTurn();
         }
     }
+    public BoardInfo getCurrentBoardVisitor(){
+        int indxNextHumanPly = m_CurrPlayer;
+        while(!m_Players.get(indxNextHumanPly).isHuman())
+        {
+            indxNextHumanPly= (indxNextHumanPly + 1 ) % m_Players.size();
+        }
+        return m_Players.get(indxNextHumanPly).getBoard();
+    }
+
+    public boolean atLeastOneHuman()
+    {
+        boolean retVal= false;
+        for(Player currPly : m_Players){
+            if(currPly.isHuman()){
+                retVal = true;
+                break;
+            }
+        }
+        return  retVal;
+    }
+
+    public boolean checkAndEnterVisitor(String name)
+    {
+        boolean entered = false;
+        if(atLeastOneHuman())
+        {
+            m_VisitorPlayers.add(name);
+            entered = true;
+        }
+        return entered;
+    }
 
     public BoardInfo replayChoosed(boolean start){
         return m_Players.get(m_CurrPlayer).startReplayMove(start,m_OrginalBoard);
@@ -235,15 +268,15 @@ public class GameLogic
         return m_WinnerName;
     }
 
-    public void setActiveGame(boolean gamestatus) {
-        m_ActiveGame = gamestatus;
+    public void setUnActiveGame(boolean gamestatus) {
+        m_UnActiveGame = gamestatus;
     }
 
-    public boolean isActiveGame() {
-        return m_ActiveGame;
+    public boolean isUnActiveGame() {
+        return m_UnActiveGame;
     }
 
-    public boolean getM_TechnicalVictory() {
+    public boolean getTechnicalVictory() {
         return m_TechnicalVictory;
     }
 
@@ -251,19 +284,24 @@ public class GameLogic
     public synchronized void removePlayer(String playerNameToRemove)
     {
         int plyIndex = 0;
-        for (Player ply: m_Players)
-        {
-            if(ply.getName().equals(playerNameToRemove))
-            {
-                m_Players.remove(plyIndex);
-                checkTechnicalVictory();
 
-                if(m_Players.size() == 0){
-                    initGame();
+        if(m_VisitorPlayers.contains(playerNameToRemove))
+        {
+            m_VisitorPlayers.remove(playerNameToRemove);
+        }
+        else {
+            for (Player ply : m_Players) {
+                if (ply.getName().equals(playerNameToRemove)) {
+                    m_Players.remove(plyIndex);
+                    checkTechnicalVictory();
+
+                    if (m_Players.size() == 0) {
+                        initGame();
+                    }
+                    break;
                 }
-                break;
+                plyIndex++;
             }
-            plyIndex++;
         }
     }
 
@@ -271,7 +309,7 @@ public class GameLogic
         m_CurrPlayer = FIRST_PLAYER;
         m_currMoveOfSamePlayer = TURN_START_VALUE;
         m_CurrRound = ROUND_START_VALUE;
-        m_ActiveGame = true;
+        m_UnActiveGame = true;
         m_WinnerName = null;
         m_TechnicalVictory = false;
         m_finishAllRound = false;
@@ -302,6 +340,12 @@ public class GameLogic
     public String getNameCurrPlayer() {
         return m_Players.get(m_CurrPlayer).getName();
     }
+
+    public boolean fullGame(){return m_Players.size() == m_TotalPlayers;}
+
+    public ArrayList<String> getVisitor(){return m_VisitorPlayers;}
+
+    public boolean isVisitor(String name){return m_VisitorPlayers.contains(name);}
 
 //endregion
 

@@ -46,9 +46,6 @@ public class GameRoomServlet extends HttpServlet
             case Constants.GAME_STATUS:
                 gameStatus(request, response);
                 break;
-            case Constants.PERFOME_MOVE_AS_COMPUTER:
-                computerMove(request,response);
-                break;
             case Constants.IS_GAME_STARTED:
                 isGameStarted(request, response);
                 break;
@@ -73,9 +70,39 @@ public class GameRoomServlet extends HttpServlet
             case Constants.PREV_OR_NEXT:
                 prevOrNextOption(request,response);
                 break;
+            case Constants.PULL_VISITOR_BOARD:
+                pullBoardVisitor(request,response);
+                break;
+            case Constants.IS_VISITOR:
+                plyIsVisitor(request,response);
+                break;
 
         }
     }
+
+    private void plyIsVisitor(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException {
+        response.setContentType("application/json");
+
+        String nameJson = new Gson().toJson(((User)request.getSession(false).getAttribute(Constants.LOGIN_USER)).GetName());
+        String name = nameJson.substring(1, nameJson.length()-1);
+        GameLogic currGame = getGameLogic(request);
+
+        boolean retVal=currGame.isVisitor(name);
+        String retJson = new Gson().toJson(retVal);
+
+        response.getWriter().write(retJson);
+        response.getWriter().flush();
+    }
+
+    private void pullBoardVisitor(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+        response.setContentType("application/json");
+        GameLogic currGame = getGameLogic(request);
+        BoardInfo boardCurrPly = currGame.getCurrentBoardVisitor();
+        String board = new Gson().toJson(boardCurrPly);
+        response.getWriter().write(board);
+        response.getWriter().flush();
+    }
+
 
     private Player getSpecificPlayerByName(HttpServletRequest request)
     {
@@ -319,7 +346,7 @@ public class GameRoomServlet extends HttpServlet
     {
         response.setContentType("application/json");
         GameLogic currGame = getGameLogic(request);
-        BoardInfo board = currGame.getCurrentBoard();
+        BoardInfo board = currGame.getOriginalBoard();
         SimpleBoard responseBoard = new SimpleBoard(board.getBoard(), board.getRowBlocks(), board.getColBlocks());
         String boardJson = new Gson().toJson(responseBoard);
         response.getWriter().write(boardJson);
@@ -334,7 +361,7 @@ public class GameRoomServlet extends HttpServlet
 
         if(currGame.isFullPlayers()){
             isGameStarted = "true";
-            currGame.setActiveGame(false);
+            currGame.setUnActiveGame(false);
         }
         response.getWriter().write(isGameStarted);
         response.getWriter().flush();
@@ -371,14 +398,16 @@ public class GameRoomServlet extends HttpServlet
         response.setContentType("application/json");
         String nameJson = new Gson().toJson(((User)request.getSession(false).getAttribute(Constants.LOGIN_USER)).GetName());
 
-        String usersJson, gameDetalisJson;
+        String usersJson, gameDetalisJson,visitorJson;
         GameLogic currGame = getGameLogic(request);
         List<Player> gamePlayers = currGame.getPlayers();
+        ArrayList<String> visitors = currGame.getVisitor();
 
         usersJson = getPlayesToJson(gamePlayers);
         gameDetalisJson = getGameDetalisJson(currGame);
+        visitorJson=new Gson().toJson(visitors);
 
-        String bothJson = "["+usersJson+","+gameDetalisJson+","+nameJson+"]"; //Put both objects in an array of 3 elements
+        String bothJson = "["+usersJson+","+gameDetalisJson+","+nameJson+","+visitorJson+"]"; //Put both objects in an array of 3 elements
         response.getWriter().write(bothJson);
         response.getWriter().flush();
     }
@@ -386,7 +415,7 @@ public class GameRoomServlet extends HttpServlet
     private String getGameDetalisJson(GameLogic game)
     {
         GameDetails gameDetalis = new GameDetails(game.getCurrentPlayer().getName(), game.getCurrGameRound(), game.getTotalRounds(),
-                game.getCurrMoveOfSamePlayer(), game.getGameTitle(), game.getWinnerName(), game.getM_TechnicalVictory(), game.getFinishAllRound());
+                game.getCurrMoveOfSamePlayer(), game.getGameTitle(), game.getWinnerName(), game.getTechnicalVictory(), game.getFinishAllRound());
         Gson gson = new Gson();
         String gameDetalisJson =  gson.toJson(gameDetalis);
         return gameDetalisJson;

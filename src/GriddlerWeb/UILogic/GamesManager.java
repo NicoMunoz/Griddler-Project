@@ -10,6 +10,7 @@ import GriddlerWeb.jaxb.schema.generated.Square;
 
 import java.io.InputStream;
 import java.util.*;
+import java.util.concurrent.locks.Lock;
 
 public class GamesManager
 {
@@ -29,27 +30,28 @@ public class GamesManager
         boolean gameLoaded = m_XmlManager.loadXML(file);
         if(gameLoaded)
         {
-            String gameTitle = m_XmlManager.getGameData().getDynamicMultiPlayers().getGametitle();
-            if(m_GamesMap.get(gameTitle) == null) // game not exsist
-            {
-                int rows = m_XmlManager.getGameData().getBoard().getDefinition().getRows().intValue();
-                int cols = m_XmlManager.getGameData().getBoard().getDefinition().getColumns().intValue();
-                ////////////////
-                ArrayList<Cell> solutionCells = new ArrayList();
-                ArrayList<BlockValues>[] rowBlocks, colsBlock;
-                rowBlocks = new ArrayList[rows];
-                colsBlock = new ArrayList[cols];
-                getSolutionAndBlocks(solutionCells, rowBlocks, colsBlock);
-                ////////////////
-                int totalPlayers = Integer.parseInt(m_XmlManager.getGameData().getDynamicMultiPlayers().getTotalPlayers());
-                int totalRounds = Integer.parseInt(m_XmlManager.getGameData().getDynamicMultiPlayers().getTotalmoves());
+            synchronized (this) {
+                String gameTitle = m_XmlManager.getGameData().getDynamicMultiPlayers().getGametitle();
+                if (m_GamesMap.get(gameTitle) == null) // game not exsist
+                {
+                    int rows = m_XmlManager.getGameData().getBoard().getDefinition().getRows().intValue();
+                    int cols = m_XmlManager.getGameData().getBoard().getDefinition().getColumns().intValue();
+                    ////////////////
+                    ArrayList<Cell> solutionCells = new ArrayList();
+                    ArrayList<BlockValues>[] rowBlocks, colsBlock;
+                    rowBlocks = new ArrayList[rows];
+                    colsBlock = new ArrayList[cols];
+                    getSolutionAndBlocks(solutionCells, rowBlocks, colsBlock);
+                    ////////////////
+                    int totalPlayers = Integer.parseInt(m_XmlManager.getGameData().getDynamicMultiPlayers().getTotalPlayers());
+                    int totalRounds = Integer.parseInt(m_XmlManager.getGameData().getDynamicMultiPlayers().getTotalmoves());
 
-                GameLogic newGame = new GameLogic(userNameFromSession, gameTitle, totalPlayers, totalRounds,
-                        rows, cols, rowBlocks, colsBlock, solutionCells);
-                m_GamesMap.put(gameTitle, newGame);
-            }
-            else{
-                return "Game With The Same Name Exsist";
+                    GameLogic newGame = new GameLogic(userNameFromSession, gameTitle, totalPlayers, totalRounds,
+                            rows, cols, rowBlocks, colsBlock, solutionCells);
+                    m_GamesMap.put(gameTitle, newGame);
+                } else {
+                    return "Game With The Same Name Exsist";
+                }
             }
         }
         else {

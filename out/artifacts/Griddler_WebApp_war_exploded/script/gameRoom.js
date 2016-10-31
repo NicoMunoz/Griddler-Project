@@ -3,22 +3,66 @@ var refreshRate = 1000; //miliseconds
 $(document).ready(function () {
     $.ajaxSetup({cache: false});
 
-    $('#buttonQuit').on("click", ajaxQuitGame);
-    $("#radioMark").prop("checked", true);
-
-    ajaxGamesDeatilsAndPlayers();
-    GamesDeatilsAndPlayers = setInterval(ajaxGamesDeatilsAndPlayers, refreshRate);
-    startGame = setInterval(ajaxIsGameStarted, refreshRate);
-
-
-    getBoard($('#board'));
-
     $('#GameAction').hide();
     $('#Replay').hide();
+    $('#visitorsTable').hide();
+
+    $('#buttonQuit').on("click", ajaxQuitGame);
+    ajaxGamesDeatilsAndPlayers();
+    GamesDeatilsAndPlayers = setInterval(ajaxGamesDeatilsAndPlayers, refreshRate);
+
+    getBoard($('#board'));
+    var actionType = "isVisitor";
+    $.ajax({
+        url: "gamingRoom",
+        data: {
+            "ActionType": actionType
+        },
+        success:function (result){
+            if(result){
+                visitoPlayer();
+            }
+            else
+            {
+               realPlayer();
+            }
+        }
+    });
+
+});
+
+function visitoPlayer()
+{
+    $('#buttonQuit').val("Back To Lobby");
+    setInterval(ajaxVisitorBoard,refreshRate);
+
+}
+
+function ajaxVisitorBoard() {
+    var actionType = "pullVisitorBoard";
+
+    $.ajax({
+        url: "gamingRoom",
+        data: {
+            "ActionType": actionType
+        },
+        success: function (boardInfo) {
+            updateAllBoard(boardInfo);
+        }
+    });
+}
+
+
+function realPlayer()
+{
+    $("#radioMark").prop("checked", true);
+
+    startGame = setInterval(ajaxIsGameStarted, refreshRate);
+
     $('#GameInfo').hide();
 
     $('.option').on("click", actionSelected);
-});
+}
 
 function startIfFirstPlayerComputer()
 {
@@ -98,9 +142,11 @@ function ajaxGamesDeatilsAndPlayers() {
             var players = data[0];
             var gameDetails = data[1];
             var PlayerFromSesion = data[2];
+            var visitors = data[3];
 
             refreshGameDeatils(gameDetails);
             refreshPlayerList(players, PlayerFromSesion);
+            refreshVisitors(visitors)
         }
     });
 }
@@ -125,6 +171,22 @@ function refreshPlayerList(players, PlayerFromSesion) {
             userList.addClass('success');
         }
     });
+}
+
+function refreshVisitors(visitors)
+{
+    if(visitors.length == 0) {
+        $('#visitorsTable').hide();
+    } else {
+        $('#visitorsTable').show();
+        $('#allVisitors').empty();
+        for (var i = 0; i < visitors.length; i++) {
+            var visitor = $('<tr> </tr>');
+            $('<th>' + (i + 1) + '</th>').appendTo(visitor);
+            $('<th>' + visitors[i] + '</th>').appendTo(visitor);
+            visitor.appendTo($("#allVisitors"));
+        }
+    }
 }
 
 function refreshGameDeatils(gameDetails) {

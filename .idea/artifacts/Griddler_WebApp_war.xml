@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Griddler WebApp:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/Griddler_WebApp_war</output-path>
+    <root id="archive" name="Griddler WebApp_war.war">
+      <element id="artifact" artifact-name="Griddler WebApp:war exploded" />
+    </root>
+  </artifact>
+</component>

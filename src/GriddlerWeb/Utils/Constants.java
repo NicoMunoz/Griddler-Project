@@ -30,7 +30,7 @@ public class Constants
     public static final String JOIN_GAME = "JoinGame";
     public static final String CHECK_USER_PLAYING = "CheckUserPlaying";
     public static final String XML_FILE = "xmlFileName";
-
+    public static final String JOIN_AS_VISITOR="joinGameVisitor";
 
     // game room servlet
     public static final String DO_MOVE = "doMove";
@@ -40,6 +40,7 @@ public class Constants
     public static final String PERFOME_MOVE_AS_COMPUTER = "PerformeMoveAsComputer";
     public static final String GAME_STATUS = "GameStatus";
     public static final String EXIT_GAME = "ExitGame";
+
     //public static final String INITIALIZE = "Initialize";
     public static final String IS_GAME_STARTED = "isGameStarted";
     public static final String GET_BOARD = "getBoard";
@@ -48,6 +49,8 @@ public class Constants
     public static final String FIRST_PLY_COMP="firstPlyComputer";
     public static final String REPLAY="replay";
     public static final String PREV_OR_NEXT="prevOrNext";
+    public static final String PULL_VISITOR_BOARD="pullVisitorBoard";
+    public static final String IS_VISITOR="isVisitor";
 
 
 
